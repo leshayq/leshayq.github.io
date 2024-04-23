@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Пример</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header-white">
+        <div class="wrapper">
+          <div class="row">
+            <div class="w-2">
+              <div id="logo">
+                <a href=""><img src="images/Logo.png" alt="Logo"></a>
+              </div>
+            </div>
+    
+          <div class="w-2 right-centerr">
+            <div id="search">
+              <div id="search-in" class="flex">
+                <input type="search" placeholder="Search">
+                <button>Submit</button>
+              </div>
+            </div>
+          
+            <div id="menu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Company Profile</a></li>
+                <li><a href="oranges_all.html">Products</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">R & D</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    <div class="bg-tomato">
+      <article>
+        <div class="wrapper">
+            <div class="returnback">
+                <p><a href="oranges_all.html">← Return to all oranges</a></p>
+            </div>
+            <div class="tomato_one_content">
+            <div class="w-2">
+              <h1>{{ product.title }} {{ product.short_text}}</h1>
+                <p class="text_union">×××××</p>
+                <div class="text-right-tomato">
+                    <img src="images/Group 17.png" alt="">
+                    <span>
+                        Very high yield and excellent fruits quality!
+                    </span>
+                </div>
+                <div class="title_characteristics">
+                    <span><b>CHARACTERISTICS</b></span>
+                    <hr>
+                    <br>
+                </div>
+                <span class="characteristics" v-html="product.char">
+                </span>
+                <div class="title_characteristics">
+                    <span><b>Plant</b></span>
+                    <hr>
+                    <br>
+                </div>
+                <ul class="ul-tomatoone" v-html="product.plant">
+                </ul>
+                <div class="title_characteristics">
+                    <span><b>Fruit</b></span>
+                    <hr>
+                    <br>
+                </div>
+                <ul class="ul-tomatoone" v-html="product.fruit">
+                </ul>
+            </div>
+            <div class="w-2">
+              <img class="img-tomato" :src="product.image" alt="">
+                <div class="btn-pdf-tomato">
+                    <a href="#" class="pdf-download-button" @click.prevent="addToCart(product.id)" v-if="!btnVisible">
+                        <span class="pdf-icon"></span>
+                        Add to cart
+                    </a>
+                    <a href="contact_us.html" class="pdf-download-button" v-if="btnVisible">
+                      <span class="pdf-icon"></span>
+                      Go to Cart
+                  </a>
+                </div>
+                <div class="title_characteristics">
+                    <span><b>Cycle</b></span>
+                    <hr>
+                    <br>
+                </div>
+                <ul class="ul-tomatoone" v-html="product.cycle">
+                </ul>
+                <div class="title_characteristics">
+                    <span><b>Color</b></span>
+                    <hr>
+                    <br>
+                </div>
+                <span class="text-tomatoone" v-html="product.color"></span>
+          </div>
+          </div>
+        </div>
+    </div>
+  </article>
+  <div class="footer">
+    <div class="footer-content">
+      <div id="links">
+        <ul>
+          <li><a href="">PROFILE</a></li>
+          <li><a href="">MANAGEMENT</a></li>
+          <li><a href="oranges_all.html">PRODUCTS</a></li>
+          <li><a href="">R&D</a></li>
+          <li><a href="">LINKS</a></li>
+          <li><a href="">SITEMAP</a></li>
+          <li><a href="contact_us.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="social_medias">
+          <a href=""><img src="images/Ico_in.png" alt="in"></a>
+          <a href=""><img src="images/Ico_inst.png" alt="inst"></a>
+          <a href=""><img src="images/Ico_tube.png" alt="youtube"></a>
+          <a href=""><img src="images/Ico_tw.png" alt="twitter"></a>
+          <a href=""><img src="images/Ico_fb.png" alt="facebook"></a>
+      </div>      
+    </div>
+    <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+@media (max-width: 1200px){
+    .wrapper{
+        max-width: 50%;
+    }
+    div .wrapper{
+        max-width: 100%;
+    }
+    .w-2 {
+        width: 100%;
+    }
+
+    .right-centerr {
+        text-align: center;
+    }
+    #logo{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #search {
+        margin: 0;
+        max-width: 360px;
+        width: 100%;
+    }
+    #menu ul li a{
+        font-size: 24px;
+    }
+    #search input {
+        max-width: 100%;
+    }
+
+    #links ul li a {
+        font-size: 14px;
+    }
+
+    #links ul li {
+        display: inline;
+        margin-left: 2.5em;
+    }
+
+    #slider h1{
+        margin-top: 0;
+    }
+    .open{
+        display: flex !important;
+    }
+
+    #menu {
+        text-align: right;
+        justify-content: center;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .social_medias {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    #menu::before{
+        margin-right: 25px;
+        margin-bottom: -17px;
+        content: "";
+        display: inline-block;
+        background-size: 100% 100%;
+        background-image: url(images/menu-icon-24.png);
+        width: 25px;
+        height: 25px;
+    }
+
+    #menu ul {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    #menu ul li {
+        display: block;
+        text-align: center;
+    }
+
+    #menu:active ul, #menu ul:hover {
+        display: block;
+    }
+
+    #links-footer ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .description{
+        padding: 45px 20px;
+    }
+
+    .item-white-list {
+        width: 100%;
+    }
+
+    .white-list{
+        margin: 5px 0;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .bg-tomato{
+        padding: 0 50px;
+    }
+    
+    .bg_gray .wrapper{
+        max-width: 70%;
+    }
+
+    .flex-contact-main{
+        flex-direction: column;
+    }
+
+    .flex-contact-main .contact-column:first-child
+    {
+        width: 100%;
+    }
+    
+    .flex-contact-main .contact-column:last-child
+    {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .tomato_all_header {
+        margin-left: 15px;
+        font-size: 36px;
+    }
+
+    .text_union {
+        margin-left: 15px;
+    }
+    .text_p_desc {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+    .tomato_one_content h1 {
+        font-size: 41px;
+    }
+    .text-right-tomato span {
+        font-size: 25px;
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .tomato_all_header {
+        font-size: 30px;
+    }
+    .text_p_desc {
+        font-size: 15px;
+    }
+
+    #links ul li a {
+        font-size: 12px;
+    }
+
+    #links ul li {
+        display: inline;
+        margin-left: 2em;
+    }
+    #slider h1 {
+        font-size: 36px;
+    }
+    #slider a {
+        width: 138px;
+        height: 46px;
+        line-height: 46px;
+    }
+    .text{
+        font-size: 0.7em;
+    }
+     .title{
+        font-size: 2.5em;
+    } 
+    .text-content-label{
+        font-size: 1.8em;
+    }
+    .right-centerr {
+        text-align: center;
+    }
+    .middle{
+        padding: 78px 20px;
+    }
+    .main_text{
+        font-size: 15px;
+    }
+    #logo{
+        text-align: center;
+    }
+    .subtext{
+        font-size: 1.2em;
+    text-overflow: ellipsis;
+    }
+
+    #search input {
+        max-width: 100%;
+    }
+    .submit-flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .submit-flex img{
+        width: 30%;
+    }
+    .submit-flex input[type=text] {
+        margin: 8px 0;
+        width: 95%;
+    }
+    .submit-flex input[type=submit]{
+        width: 100%;
+        padding: 15px 40px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .tomato_all_header {
+        font-size: 30px;
+        margin-left: 15px;
+    }
+
+    .text_union {
+        margin-left: 15px;
+    }
+    .text_p_desc {
+        font-size: 15px;
+        margin-left: 15px;
+    }
+    #slider h1 {
+        font-size: 28px;
+    }
+
+    .text-content-label {
+        font-size: 1.3em;
+    }
+
+    .main_text {
+        font-size: 14px;
+    }
+
+    #links ul li a {
+        font-size: 12px;
+    }
+
+    #links ul li {
+        display: inline;
+        margin-left: 1.2em;
+    }
+    .tomato_one_content h1{
+        font-size: 30px;
+    }
+    .text-right-tomato span{
+        font-size: 18px;
+    }
+    #products{
+        padding: 0;
+        margin: 0;
+    }
+    #products .row{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #products .row .w-7{
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .tomato_one_content {
+        flex-direction: column;
+    }
+
+    .text-right-tomato {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .title_characteristics {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .bg-tomato {
+        padding-bottom: 100px;
+    }
+
+    .title_characteristics, .img-tomato, .btn-pdf-tomato {
+        text-align: center;
+    }
+
+    .img-tomato{
+        width: 70%;
+    }
+
+    .tomato_one_content .w-2 {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .w-2 ul li{
+        list-style-type: none;
+    }
+    
+ }
+@media only screen and (max-width: 480px) {
+    .tomato_all_header {
+        font-size: 23px;
+        margin: 0px 15px;
+    }
+    .text_p_desc {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .text_union {
+        margin: 0px 15px;
+    }
+    #slider a {
+        font-size: 13px;
+    }
+    #slider a {
+        width: 119px;
+        height: 35px;
+        line-height: 35px;
+    }
+    #slider h1 {
+        font-size: 22px;
+    }
+    #links ul li {
+        display: block;
+        margin-left: 1.2em;
+        margin-bottom: 13px;
+    }
+    #links ul li a {
+        font-size: 17px;
+    }
+    #links ul {
+        padding: 0px 0px 13px 0px;
+    }
+
+   .seeds{
+        flex-direction: column;
+        align-items: center;
+   }
+   .marginbott{
+        margin: 0;
+   }
+   .seeds .w-3{
+    margin-top: 10px;
+   } 
+} 

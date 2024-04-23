@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Tomato_All</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header-white">
+        <div class="wrapper">
+          <div class="row">
+            <div class="w-2">
+              <div id="logo">
+                <a href=""><img src="images/Logo.png" alt="Logo"></a>
+              </div>
+            </div>
+    
+          <div class="w-2 right-centerr">
+            <div id="search">
+              <div id="search-in" class="flex">
+                <input type="search" placeholder="Search">
+                <button>Submit</button>
+              </div>
+            </div>
+          
+            <div id="menu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Company Profile</a></li>
+                <li><a href="oranges_all.html">Products</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">R & D</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+      </div>
+
+    <div class="bg_gray">
+        <div class="content">
+            <div id="slider-img">
+                <img src="images/image 7.jpg" alt="">
+            </div>
+        </div>
+        <div class="wrapper">
+            <h1 class="text-contact-title">Contact us</h1>
+            <p class="text_union">×××××</p>
+            <article>
+                <div class="cart-table">
+                    <table>
+                        <thead v-if="showTableHeaders">
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Full name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in cart" :key="item.id">
+                                <td><img :src="item.image" alt="Product Image" class="thumbnail"></td>
+                                <td>{{ item.title }}</td>
+                                <td>{{ item.short_text }}</td>
+                                <td><button @click="removeFromCart(item.id)">×</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        <div class="order-info" v-if="showOrderInfo">
+                    <h2>Order Information</h2>
+                    <p>Name: {{ orderInfo.name }}</p>
+                    <p>Company Name: {{ orderInfo.companyName }}</p>
+                    <p>Position: {{ orderInfo.position }}</p>
+                    <p>City: {{ orderInfo.city }}</p>
+                    <p>Country: {{ orderInfo.country }}</p>
+                    <p>Telephone: {{ orderInfo.telephone }}</p>
+                    <p>Email: {{ orderInfo.email }}</p>
+                    <p>User Type: {{ orderInfo.userType }}</p>
+                    <p v-if="orderInfo.userType === 'other'">Other Type: {{ orderInfo.otherType }}</p>
+                    <p>Interest: {{ orderInfo.interest }}</p>
+        </div>
+        <div v-if="!showOrderInfo">
+        <form @submit.prevent="makeOrder">
+            <div class="flex-contact-main">
+                <div class="contact-column">
+                        <div class="item-flex">
+                            <label for="iname">Name *</label>
+                            <input type="text" v-model="contactFields.name" name="iname" id="name" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="icomp">Company Name *</label>
+                            <input type="text" v-model="contactFields.companyName" name="icomp" id="comp" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="ipos">Position *</label>
+                            <input type="text" v-model="contactFields.position" name="ipos" id="pos" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="icity">City *</label>
+                            <input type="text" v-model="contactFields.city" name="icity" id="city" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="icountry">Country *</label>
+                            <input type="text" v-model="contactFields.country" name="icountry" id="Country" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="itel">Telephone *</label>
+                            <input type="text" v-model="contactFields.telephone" name="itel" id="tel" required>
+                        </div>
+                        <div class="item-flex">
+                            <label for="iemail">Email *</label>
+                            <input type="email" v-model="contactFields.email"name="iemail" id="email" required>
+                        </div>
+                    </div>
+                    <div class="contact-column">
+                        <div class="item-flex">
+                            <label for="iselect">You are a *</label>
+                            <select v-model="contactFields.userType" name="iselect" id="select" required>
+                                <option value="seedproducer">seed producer</option>
+                            </select>
+                        </div>
+                        <div class="item-flex">
+                            <label for="iselect">If other, please specify</label>
+                            <input type="text" v-model="contactFields.otherType" name="iselect" id="select" >
+                        </div>
+                        <div class="item-flex">
+                            <label for="iarea">You are interested in</label>
+                            <textarea v-model="contactFields.interest" name="iarea" id="area" cols="30" rows="16" required></textarea>
+                        </div>
+                        <div class="item-flex">
+                            <label></label>
+                            <div class="submit-flex">
+                                <input type="submit" value="Send Message">
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+</form>
+</article>
+</div>
+    <div class="contact_us_info">
+        <div class="title-address">
+            <span><b>Our Address</b></span>
+            <hr>
+            </div>
+            <p class="text_p_desc">AGRIDERA Seeds & Agriculture Ltd.</p>
+            <p class="text_p_desc">P.O Box 103,</p>
+            <p class="text_p_desc">Gedera 70750, Israel</p>
+            <p class="text_p_desc">Telephone: <a href="tel:+97289449222">+972 8 944 9222</a> </p>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+          <div id="links">
+            <ul>
+              <li><a href="">PROFILE</a></li>
+              <li><a href="">MANAGEMENT</a></li>
+              <li><a href="oranges_all.html">PRODUCTS</a></li>
+              <li><a href="">R&D</a></li>
+              <li><a href="">LINKS</a></li>
+              <li><a href="">SITEMAP</a></li>
+              <li><a href="contact_us.html">CONTACT</a></li>
+            </ul>
+          </div>
+          <div class="social_medias">
+              <a href=""><img src="images/Ico_in.png" alt="in"></a>
+              <a href=""><img src="images/Ico_inst.png" alt="inst"></a>
+              <a href=""><img src="images/Ico_tube.png" alt="youtube"></a>
+              <a href=""><img src="images/Ico_tw.png" alt="twitter"></a>
+              <a href=""><img src="images/Ico_fb.png" alt="facebook"></a>
+          </div>      
+        </div>
+        <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>
