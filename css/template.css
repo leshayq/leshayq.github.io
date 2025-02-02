@@ -30,7 +30,7 @@ body, html {
     position: relative;
 }
 
-.header {
+.login-header {
     width: 100%;
     position: absolute;
     top: 0;
@@ -46,6 +46,12 @@ body, html {
     align-items: center;
     padding: 5px 15px 5px 15px;
     font-size: 12px;
+}
+
+.campaigns-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #right-area {
@@ -137,3 +143,214 @@ button.btn:hover {
     animation: showFromLeft 0.3s normal;
 }
 
+
+.inside-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.date-picker {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+}
+
+.table-container {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+}
+
+th.id, td.id {
+    width: 50px;
+    text-align: center;
+}
+
+th.actions, td.actions {
+    width: 150px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+.actions a {
+    color: #000000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.actions a:hover {
+    color: #44fc44;
+}
+
+.empty {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+
+.date-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.campaigns-dates {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.campaigns-title {
+    text-align: right;
+    min-width: 150px;
+    color: #353535;
+}
+
+.campaigns-title h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
+}
+
+.popup-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+  
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    z-index: 1001;
+}
+  
+.head-popup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f2f5;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+  
+.head-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+.popup-inner {
+    padding: 20px;
+    text-align: center;
+}
+  
+.popup-inner .al {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+  
+.botBtns {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-top: 20px;
+}
+  
+.btnS {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    background: #00c853;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btnS:hover {
+    background-color: #007bff;
+    color: white;
+}
+  
+.al {
+    font-size: 16px;
+}
+
+.compaign-color-container {
+    background-color: #f0f7fa;
+    height: 100vh;
+}

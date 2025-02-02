@@ -40,7 +40,7 @@ export const login = {
     </div>
 
     <div id="right-container">
-        <div class="header">
+        <div class="login-header">
             <div class="wrapper">
                 <h1>Affiliate Sign in</h1>
                 <div class="logo">

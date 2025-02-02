@@ -6,7 +6,9 @@ export const msg = {
         t1: "",
         t2: "",
         code: 0,
-        interval: ""
+        interval: "",
+        confirmTitle: "",
+        confirm: ""  
       };
     },
     watch: {},
@@ -68,6 +70,29 @@ export const msg = {
           }, 3000);
         }, 100);
       },
+      confirmFun(title,text){
+        this.code = 0;
+        var self = this;
+        console.log('Show confirm popup');
+        return new Promise(function(resolve, reject) {
+            self.confirmTitle = title;
+            self.confirm = text;
+            self.$refs.confirm.active=1;
+            console.log('Popup active state:', self.$refs.confirm.active);
+            self.interval = setInterval(function(){
+              if(self.code>0) resolve();
+            }, 100);
+        }).then(function() {
+          clearInterval(self.interval);
+          self.$refs.confirm.active=0;
+          if(self.code==1){
+            return true;
+          }
+          if(self.code==2){
+            return false;
+          }
+        });
+    }
     },  
       template: `
         <div class="alertMsg" v-if="alert">
@@ -81,5 +106,15 @@ export const msg = {
             <i class="fas fa-check-circle"></i> {{success}}
           </div>
         </div>
+
+      <popup ref="confirm" :title="confirmTitle">
+          <div class="al">
+              {{ confirm }} <i class="fas fa-info-circle"></i> 
+              <div class="botBtns">
+                  <a class="btnS" href="#" @click.prevent="code=1">Yes</a>
+                  <a class="btnS" href="#" @click.prevent="code=2">No</a>
+              </div>
+          </div>
+      </popup>
       `
 };
