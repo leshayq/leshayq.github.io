@@ -156,9 +156,10 @@ button.btn:hover {
 .panel {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 30px 0px 20px 0px;
+    position: relative;
 }
 
 .date-picker {
@@ -172,7 +173,7 @@ input[type="date"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    background: white;
+    background: #f0f7fa;
 }
 
 .table-container {
@@ -249,9 +250,12 @@ tbody tr:nth-child(odd) {
 }
 
 .date-container {
-    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    align-items: center;
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 .campaigns-dates {
@@ -262,9 +266,11 @@ tbody tr:nth-child(odd) {
 }
 
 .campaigns-title {
-    text-align: right;
-    min-width: 150px;
     color: #353535;
+    text-align: right; 
+    min-width: 150px;
+    padding-left: 20px;
+    margin-left: auto; 
 }
 
 .campaigns-title h1 {
@@ -292,6 +298,7 @@ tbody tr:nth-child(odd) {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    margin-top: -50px;
     width: 100%;
     z-index: 1001;
 }
