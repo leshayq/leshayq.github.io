@@ -27,6 +27,7 @@ export const campaigns = {
     },
   
     methods: {
+        
       GetFirstAndLastDate: function () {
         var year = new Date().getFullYear();
         var month = new Date().getMonth();
@@ -90,77 +91,100 @@ export const campaigns = {
     <div class="compaign-color-container">
         <div class="inside-content">
         <Header ref="header" />
-        <div id="spinner" v-if="loader"></div>
-        <div class="campaigns-wrapper">
-            <div class="panel">
-                <div class="date-container">
-                        <div class="campaigns-dates">
-                            <input type="date" v-model="date" @change="get()" /> -
-                            <input type="date" v-model="date2" @change="get()" />
-                        </div>
+        <div class="campaign-wrapper">
+            <div id="spinner" v-if="loader"></div>
+            <div class="campaigns-wrapper">
+                <div class="panel">
+                    <div class="w20 al ptb20">
+                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.new.active=1">New <i class="fas fa-plus" style="margin-left: 5px;"></i></a>
                     </div>
-                <div class="campaigns-title">
-                    <h1>Campaigns</h1>
-                </div>
-                <div class="w20 al ptb20">
-                
-            </div>
-        </div>
 
-        <div class="table" v-if="data.items!=''">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="actions">Actions</th>
-                        <th class="id">Fraud clicks</th>
-                        <th class="id">Leads</th>
-                        <th class="id">Clicks</th>
-                        <th class="id">Views</th>
-                        <th>Title</th>
-                        <th class="id">#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(item,i) in data.items">
-                        <td class="actions">
-                            <a href="#" @click.prevent="parent.formData = item;del();">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
-                        <td class="id">
-                            <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,4)">
-                                <template v-if="item.fclicks">{{item.fclicks}}</template>
-                                <template v-if="!item.fclicks">0</template>
-                            </a>
-                        </td>
-                        <td class="id">
-                            <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,3)">
-                                <template v-if="item.leads">{{item.leads}}</template>
-                                <template v-if="!item.leads">0</template>
-                            </a>
-                        </td>
-                        <td class="id">
-                            <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,2)">
-                                <template v-if="item.clicks">{{item.clicks}}</template>
-                                <template v-if="!item.clicks">0</template>
-                            </a>
-                        </td>
-                        <td class="id">
-                            <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,1)">
-                                {{item.views}}
-                            </a>
-                        </td>
-                        <td>
-                            <router-link to="'/campaign/'+item.id">{{item.title}}</router-link>
-                        </td>
-                        <td class="id">{{item.id}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="empty" v-if="data.items==''">
-            No items
-        </div>
+                    <popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit campaign' : 'New campaign'">
+                        <div class="form inner-form">
+                            <form @submit.prevent="action()" v-if="parent.formData">
+                                <div class="row">
+                                    <label>Name</label>
+                                    <input type="text" v-model="parent.formData.title" required>
+                                </div>
+
+                                <div class="row">
+                                    <button class="btn" v-if="parent.formData && parent.formData.id">Edit</button>
+                                    <button class="btn" v-if="parent.formData && !parent.formData.id">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </popup>
+
+                    <div class="date-container">
+                            <div class="campaigns-dates">
+                                <input type="date" v-model="date" @change="get()" /> -
+                                <input type="date" v-model="date2" @change="get()" />
+                            </div>
+                        </div>
+                    <div class="campaigns-title">
+                        <h1>Campaigns</h1>
+                    </div>
+            </div>
+
+            <div class="table" v-if="data.items!=''">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="actions">Actions</th>
+                            <th class="id">Fraud clicks</th>
+                            <th class="id">Leads</th>
+                            <th class="id">Clicks</th>
+                            <th class="id">Views</th>
+                            <th>Title</th>
+                            <th class="id">Toggle</th>
+                            <th class="id">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item,i) in data.items">
+                            <td class="actions">
+                                <a href="#" @click.prevent="parent.formData = item;del();">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                            <td class="id">
+                                <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,4)">
+                                    <template v-if="item.fclicks">{{item.fclicks}}</template>
+                                    <template v-if="!item.fclicks">0</template>
+                                </a>
+                            </td>
+                            <td class="id">
+                                <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,3)">
+                                    <template v-if="item.leads">{{item.leads}}</template>
+                                    <template v-if="!item.leads">0</template>
+                                </a>
+                            </td>
+                            <td class="id">
+                                <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,2)">
+                                    <template v-if="item.clicks">{{item.clicks}}</template>
+                                    <template v-if="!item.clicks">0</template>
+                                </a>
+                            </td>
+                            <td class="id">
+                                <a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,1)">
+                                    {{item.views}}
+                                </a>
+                            </td>
+                            <td>
+                                <router-link to="'/campaign/'+item.id">{{item.title}}</router-link>
+                            </td>
+                            <td class="id">
+                                <toogle v-model="item.published" @update:modelValue="parent.formData = item;action()" />
+                            </td>
+                            <td class="id">{{item.id}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="empty" v-if="data.items==''">
+                No items
+            </div>
+            </div>
         </div>
         </div>
     </div>

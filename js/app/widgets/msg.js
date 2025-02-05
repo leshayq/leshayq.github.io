@@ -39,7 +39,7 @@ export const msg = {
         this.success = msg;
 
         var self = this;
-        if(document.querySelector('.successMsg')) document.querySelector('successMsg').style = "";
+        if(document.querySelector('.successMsg')) document.querySelector('.successMsg').style = "";
         clearTimeout(self.t1);
         clearTimeout(self.t2);
         self.t1 = setTimeout(function(){

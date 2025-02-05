@@ -1,7 +1,7 @@
 export const popup = {
     props: ['title', 'fullscreen'],
     data() {
-      return { active: 0, top: 0, widthVal: '400px', ml: '-200px', left: '50%', height: 'auto' }
+      return { active: 0, top: 0, widthVal: '500px', ml: '-250px', left: '50%', height: 'auto' }
     },
     watch: {
       active: function(o, n) {
