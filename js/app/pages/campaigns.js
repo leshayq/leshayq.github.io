@@ -109,7 +109,7 @@ export const campaigns = {
 
                                 <div class="row">
                                     <button class="btn" v-if="parent.formData && parent.formData.id">Edit</button>
-                                    <button class="btn" v-if="parent.formData && !parent.formData.id">Add</button>
+                                    <button class="btn" v-if="parent.formData && !parent.formData.id">ADD</button>
                                 </div>
                             </form>
                         </div>
@@ -136,7 +136,7 @@ export const campaigns = {
                             <th class="id">Clicks</th>
                             <th class="id">Views</th>
                             <th>Title</th>
-                            <th class="id">Toggle</th>
+                            <th class="id"></th>
                             <th class="id">#</th>
                         </tr>
                     </thead>
