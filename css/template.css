@@ -212,6 +212,10 @@ th.id, td.id {
     text-align: center;
 }
 
+td.id label {
+    float: none !important;
+}
+
 td.image img {
     width: 70px;
     height: auto;
@@ -221,6 +225,8 @@ th.actions, td.actions {
     width: 150px;
     text-align: center;
 }
+
+
 
 td a {
     transition: color 0.3s ease;
@@ -391,7 +397,7 @@ tbody tr:nth-child(odd) {
     color: #222222;
 }
 
-.popup-inner input[type="text"] {
+.popup-inner input[type="text"], input[type="number"], input[type="date"] {
     width: 100%;
     padding: 0px 10px;
     border: 1px solid #ccc;
@@ -400,6 +406,17 @@ tbody tr:nth-child(odd) {
     box-sizing: border-box;
     text-align: right;
     font-size: 18px;
+}
+
+.popup-inner textarea {
+    background-color: #f3f7fd;
+    width: 100%;
+    padding: 10px 10px 89px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 14px;
 }
 
 .custom-select {
@@ -813,6 +830,8 @@ canvas {
 
 .single-campaign-header {
     background-color: #d5f3ec;
+    display: flex;
+    flex-direction: column;
 }
 
 .single-campaign-wrapper {
@@ -822,6 +841,81 @@ canvas {
     justify-content: space-between;
     align-items: center;
 }
+
+
+.user-ar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1400px;
+}
+
+.user-header-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.user-header-wrapper p {
+    font-size: 18px;
+}
+
+.w20 {
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+.center-email {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    max-width: 1400px;
+}
+
+.tabs ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 15px;
+}
+
+.tabs li {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #e6e6e6;
+    border: 1px solid #d3d3d3;
+    border-bottom: 4px solid #d3d3d3;
+}
+
+.tabs li:hover {
+    background-color: #f2f2f2;
+}
+
+.tabs li.active {
+    color: #000;
+    border-bottom: 4px solid #00c476;
+}
+
+.tabs li:not(.active) {
+    border-color: #d3d3d3;
+    border-bottom: 4px solid #d3d3d3;
+}
+
 
 .image-preview-area {
     background: #ebebeb;
@@ -833,4 +927,20 @@ canvas {
 .select_img span img {
     max-width: 200px;
     max-height: 200px;
+}
+
+
+.user-tab-title {
+    color: #353535;
+    text-align: right; 
+    min-width: 150px;
+    padding-left: 20px;
+    margin-left: auto; 
+}
+
+.user-tab-title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
 }
