@@ -247,7 +247,9 @@ export const campaign = {
             </div>
         </div>
         <div class="campaign-wrapper">
-            <div id="spinner" v-if="loader"></div>
+            <div id="spinner" v-if="loader">
+                <img src="images/loader.gif" alt="Loading..." />
+            </div>
             <div class="campaigns-wrapper">
                 <div class="panel">
                     <div class="w20 al ptb20">

@@ -944,3 +944,13 @@ canvas {
     margin: 0;
     text-align: right;
 }
+
+#spinner {
+    display: flex;
+    justify-content: center;
+}
+
+#spinner img {
+    width: 100px;
+    height: 100px;
+}
