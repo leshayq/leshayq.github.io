@@ -96,9 +96,11 @@ export const statistics = {
                 <img src="images/loader.gif" alt="Loading..." />
             </div>
             <div class="campaigns-wrapper">
-                <div class="panel">
+                <div class="user-account-panel">
                     <div class="w20 al ptb20">
-                        <a class="btnS" href="#" @click.prevent="parent.formData.copy = data.multi;$refs.copy.active=1;">Multi banners <i class="fas fa-images" style="margin-left: 5px;"></i></a>
+                        <a class="btnS" href="#" @click.prevent="parent.formData.copy = data.multi;$refs.copy.active=1;">
+                        <span>Multi banners</span> <i class="fas fa-images"></i>
+                        </a>
                     </div>
 
                     <popup ref="img" title="Banner">

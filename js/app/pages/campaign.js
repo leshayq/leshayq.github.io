@@ -238,8 +238,10 @@ export const campaign = {
         <Header ref="header" />
         <div class="panel single-campaign-header">
             <div class="single-campaign-wrapper">
-                <div class="w20 al ptb20">
-                    <a class="btnS" href="#" @click.prevent="parent.formData=data.info;$refs.new.active=1">Edit campaign <i class="fas fa-edit" style="margin-left: 5px;"></i></a>
+                <div class="add-edit-btns">
+                    <a class="btnS" href="#" @click.prevent="parent.formData=data.info;$refs.new.active=1">
+                        <span>Edit campaign</span> <i class="fas fa-edit"></i>
+                    </a>
                 </div>
                 <div class="campaigns-title">
                     <h1 v-if="data && data.info">{{ data.info.title }}</h1>
@@ -251,9 +253,11 @@ export const campaign = {
                 <img src="images/loader.gif" alt="Loading..." />
             </div>
             <div class="campaigns-wrapper">
-                <div class="panel">
-                    <div class="w20 al ptb20">
-                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.ad.active=1">New <i class="fas fa-plus" style="margin-left: 5px;"></i></a>
+                <div class="user-account-panel">
+                    <div class="campaigns-buttons">
+                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.ad.active=1">
+                            <span>New</span> <i class="fas fa-plus"></i>
+                        </a>
                     </div>
 
                     <popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit campaign' : 'New campaign'">

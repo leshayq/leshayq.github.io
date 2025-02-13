@@ -163,6 +163,24 @@ button.btn:hover {
     position: relative;
 }
 
+.users-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+    position: relative;
+}
+
+.user-account-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+    position: relative;
+}
+
 .date-picker {
     display: flex;
     gap: 10px;
@@ -834,6 +852,13 @@ canvas {
     flex-direction: column;
 }
 
+.single-user-header {
+    background-color: #d5f3ec;
+    display: flex;
+    flex-direction: column !important;
+}
+
+
 .single-campaign-wrapper {
     max-width: 1400px;
     width: 100%;
@@ -953,4 +978,522 @@ canvas {
 #spinner img {
     width: 100px;
     height: 100px;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.header-30 {
+    align-items: center;
+}
+
+@media(max-width:1024px) {
+    .burger-menu {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #menu.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        z-index: 1000;
+    }
+    
+    #menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 35px;
+    }
+    
+    #menu li {
+        width: auto;
+        text-align: center;
+    }
+    #menu ul li a {
+        font-size: 26px;
+    }
+    #menu a {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+    }
+    
+    #menu a.active {
+        color: #00c476;
+        position: relative;
+    }
+    
+    #menu a.active::after {
+        display: none;
+    }
+    
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .popup-back {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin-top: -50px;
+        width: 100%;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .popup[style*="100%"] {
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        max-width: none;
+        z-index: 1001;
+    }
+    
+    .head-popup {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f0f2f5;
+        padding: 25px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        position: absolute;
+        max-width: 95%;
+        width: 100%;
+        left: 0;
+    }
+    
+    .head-popup a {
+        transition: color 0.3s ease;
+    }
+    
+    .head-popup a:hover {
+        color: #00c476;
+    }
+    
+    .popup[style*="100%"] .head-popup {
+        border-radius: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .head-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #222222;
+    }
+    
+    .popup-inner {
+        padding: 20px;
+        text-align: center;
+        overflow-y: auto;
+        flex: 1;
+        max-height: calc(100vh - 60px);
+        padding-top: 100px;
+    }
+    
+    .popup-inner .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .popup-inner .al {
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+    }
+    
+    .popup-inner label {
+        display: flex !important;
+        justify-content: end;
+        color: #222222;
+    }
+    
+    .popup-inner input,
+    .popup-inner textarea,
+    .custom-select select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    
+    .botBtns {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .add-edit-btns {
+        margin-left: 20px;
+    }
+
+    #left-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .wrapper {
+        font-size: 9px;
+    }
+    #right-area .form .row input {
+        line-height: 200%;
+    }
+    .row {
+        font-size: 16px;
+    }
+
+    .inside-content {
+        max-width: 1024px;
+    }
+
+    .table {
+        overflow-x: auto;
+    }
+
+    .campaigns-title {
+        padding-right: 20px;
+    }
+
+    .user-header-wrapper {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .center-email {
+        flex-grow: 0;
+        margin-right: 35px;
+    }
+}
+
+@media(max-width:868px) {
+
+    .detail-date-picker {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .campaign-detail-30 {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .campaign-detail-header {
+        justify-content: center;
+    }
+
+    .campaign-detail-row {
+        align-items: center;
+    }
+
+    .campaign-detail-row:first-child {
+        flex-direction: column-reverse;
+    }
+
+    .campaign-detail-row:last-child {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .site-filters .site-item {
+        justify-content: center;
+    }
+
+    .campaign-detail-70 {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .stats-container {
+        margin-bottom: 0;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .tabs {
+        justify-content: center;
+    }
+
+    .stat-box {
+        padding: 5px 5px;
+    }
+
+    td.actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .campaigns-title h1 {
+        font-size: 22px;
+    }
+
+    .user-account-panel {
+        flex-direction: column-reverse;
+        position: inherit;
+        gap: 26px;
+    }
+
+    .date-container {
+        position: inherit;
+        transform: none;
+        left: 0;
+    }
+
+    #left-area {
+        display: none;
+    }
+
+    #right-container {
+        width: 100%;
+    }
+
+    #right-area .form {
+        width: 100%;
+        max-width: 95%;
+        margin-top: 15px;
+    }
+
+    #right-area {
+        align-items: start;
+    }
+
+    .login-header {
+        position: inherit;
+    }
+}
+
+@media(max-width:480px) {
+    .users-panel {
+        flex-direction: column-reverse;
+    }
+    .panel {
+        flex-direction: column-reverse;
+        padding-top: 5px;
+    }
+
+    .add-edit-btns {
+        margin-left: 20px;
+    }
+
+    .user-header-wrapper {
+        gap: 0px !important;
+    }
+
+    .campaigns-title {
+        text-align: center;
+        padding-left: 0;
+        margin-left: auto;
+        min-width: 1px;
+    }
+    .tabs {
+        margin-bottom: 20px;
+    }
+    .center-email {
+        margin-right: 30px;
+    }
+
+    .campaigns-title h1 {
+        text-align: center;
+        padding-right: 10px;
+    }
+    .single-campaign-wrapper {
+        margin: 20px;
+    }
+
+    input[type="date"] {
+        font-size: 12px;
+    }
+
+    .date-container {
+        position: inherit;
+        left: 0;
+        transform: none;
+        margin-top: 10px;
+    }
+
+    .btnS {
+        font-size: 11px;
+    }
+    
+    .campaigns-buttons {
+        margin-top: 15px;
+    }
+
+    .logo {
+        max-height: 50px;
+        height: 50px;
+        padding: 10px 0;
+    }
+
+    .actions a {
+        margin-right: 4px;
+    }
+
+    .campaigns-dates {
+        justify-content: space-between;
+    }
+
+    .date-picker {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        background: #f0f7fa;
+        width: 100%;
+        max-width: 120px;
+    }
+    
+    #right-container {
+        position: inherit;
+    }
+
+    #right-area {
+        padding: 5px;
+        align-items: start;
+    }
+
+    .login-header {
+        position: inherit;
+    }
+
+    #right-area .form {
+        margin-top: 0px;
+    }
+
+    button.btn {
+        padding: 13px;
+    }
+
+    .panel {
+        padding: 0px;
+    }
+
+    .btnS {
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        background: #00c476;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .btnS i {
+        margin-left: 5px;
+    }
+    
+    .btnS span {
+        margin-right: 5px;
+    }
+    
+    @media (max-width: 600px) {
+        .btnS span {
+            display: none;
+        }
+    }
+
+    .head-popup {
+        max-width: 91%;
+    }
+
+    td.actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .user-payments {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .campaigns-title {
+        padding-right: 0px;
+    }
+}
+
+
+@media(max-width:320px) {
+    .inside-content {
+        max-width: 320px;
+    }
+
+    .head-popup {
+        max-width: 89%;
+    }
+
+    .tabs li {
+        font-size: 12px;
+    }
+    
+    .user-header-wrapper {
+        gap: 0px;
+    }
+    .user-header-wrapper p {
+        font-size: 13px;
+    }
+
+    .campaigns-title {
+        padding-left: 0;
+    }
 }

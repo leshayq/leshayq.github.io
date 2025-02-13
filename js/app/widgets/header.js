@@ -23,7 +23,11 @@ export const header = {
             }else{
                 this.active = 1;
             }
+        },
+        toggleBurgerMenu() {
+            this.menu = this.menu === 1 ? 0 : 1;
         }
+        
     },
     template:`
 <header class="header">
@@ -39,7 +43,7 @@ export const header = {
                 </div>
             </div>
 
-            <div id="menu">
+            <div id="menu" :class="{'open': menu === 1}">
                 <ul :class="{'active':menu==1}" v-if="parent.user && parent.user.type && parent.user.type=='admin'">
                     <li v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></li>
 
@@ -88,8 +92,11 @@ export const header = {
 
             </div>
         </div>
-
+        
         <div class="header-30">
+            <div class="burger-menu" @click="toggleBurgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
             <img class="logo" :src="parent.url + '/app/views/images/logo.svg'" />
         </div>
     </div>

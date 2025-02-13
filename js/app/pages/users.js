@@ -102,9 +102,11 @@ export const users = {
                 <img src="images/loader.gif" alt="Loading..." />
             </div>
             <div class="campaigns-wrapper">
-                <div class="panel">
-                    <div class="w20 al ptb20">
-                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.new.active=1">New <i class="fas fa-plus" style="margin-left: 5px;"></i></a>
+                <div class="users-panel">
+                    <div class="campaigns-buttons">
+                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.new.active=1">
+                            <span>New</span> <i class="fas fa-plus"></i>
+                        </a>
                     </div>
 
                     <popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit user' : 'New user'">

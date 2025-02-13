@@ -275,11 +275,13 @@ export const user = {
             <div class="compaign-color-container">
             <div class="inside-content">
             <Header ref="header" />
-            <div class="panel single-campaign-header">
+            <div class="panel single-user-header">
                 <div class="single-campaign-wrapper">
-                    <div class="w20 al ptb20">
-                        <a class="btnS" href="#" @click.prevent="parent.formData=user;$refs.new.active=1">Edit user <i class="fas fa-edit" style="margin-left: 5px;"></i></a>
-                    </div>
+                <div class="add-edit-btns">
+                    <a class="btnS" href="#" @click.prevent="parent.formData=data.info;$refs.new.active=1">
+                        <span>Edit user</span> <i class="fas fa-edit"></i>
+                    </a>
+                </div>
                     <div class="campaigns-title">
                         <h1 v-if="data && data.info">{{ data.info.user }}</h1>
                     </div>
@@ -477,8 +479,10 @@ export const user = {
                     </div>
                 
                 <div v-if="tab==2">
-                    <div class="w20 al ptb20">
-                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.payment.active=1">Add payment <i class="fas fa-plus" style="margin-left: 5px;"></i></a>
+                    <div class="user-payments">
+                        <a class="btnS" href="#" @click.prevent="parent.formData={};$refs.payment.active=1">
+                        <span>Add payment</span> <i class="fas fa-plus"></i>
+                        </a>
                     </div>
                     <div class="campaigns-title">
                         <h2>{{tabs[tab]}}</h2>
